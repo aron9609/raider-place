@@ -1,0 +1,47 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'social.raider.server'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '14'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    googleMapsServceVersion = '0.18.0'
+    apacheCommonsValidatorVersion = '1.7'
+    apacheCommonsLangVersion = '3.12.0'
+}
+
+dependencies {
+    // Spring dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Google dependencies
+    implementation "com.google.maps:google-maps-services:$googleMapsServceVersion"
+
+    // Lombok dependencies
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Apache dependencies
+    implementation "commons-validator:commons-validator:$apacheCommonsValidatorVersion"
+    implementation "org.apache.commons:commons-lang3:$apacheCommonsLangVersion"
+}
+
+test {
+    useJUnitPlatform()
+}

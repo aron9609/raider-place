@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  redis:
+    url: ${REDIS_URL}
+    port: ${REDIS_PORT}
+    password: ${REDIS_PASSWORD}
+
+google:
+  geo:
+    api-key: ${GOOGLE_GEO_API_KEY}

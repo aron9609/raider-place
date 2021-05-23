@@ -1,0 +1,14 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+
+spring:
+  redis:
+    url: raider-test-redis-fra1-13404-do-user-6914728-0.b.db.ondigitalocean.com
+    port: 25061
+    password: i1ezi1v7u61ixyg8
+
+google:
+  geo:
+    api-key: AIzaSyDqCZgZvgvEDZ15LfWP44s-sXVkoJvL3Iw
